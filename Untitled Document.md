@@ -26,3 +26,8 @@ Adapun tujuan dari proyek ini yaitu :
 ## Solusi
 
 Adapun solusi untuk mencapai tujuan diatas yaitu :
+
+* _Pra-pemrosesan_ dapat dilakukan dengan beberapa teknik, yaitu
+  * Melakukan _Split Data_ dengan membagi 2 dataset sebagai data latih (train data) dan data test (test data) dengan perbandingan rasio 80% : 20%.
+  * Melakukan standardisasi data pada fitur numerik dengan _StandarScaler_.
+*
