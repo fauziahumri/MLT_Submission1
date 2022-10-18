@@ -30,4 +30,10 @@ Adapun solusi untuk mencapai tujuan diatas yaitu :
 * _Pra-pemrosesan_ dapat dilakukan dengan beberapa teknik, yaitu
   * Melakukan _Split Data_ dengan membagi 2 dataset sebagai data latih (train data) dan data test (test data) dengan perbandingan rasio 80% : 20%.
   * Melakukan standardisasi data pada fitur numerik dengan _StandarScaler_.
-*
+* Untuk pembuatan model menggunakan algoritma _Random Forest Classifier_ karena Algoritma _random forest_ merupakan salah satu algoritma supervised _learning_. algoritma ini bisa digunakan untuk menyelesaikan masalah klasifikasi dan regresi. _Random forest_ juga merupakan algoritma yang sering digunakan karena cukup sederhana tetapi memiliki stabilitas yang mumpuni. 
+
+  Dalam proyek ini akan menggunakan _Random Forest Classifier_ Non-linier, adapaun cara kerjanya yaitu:
+  * Data dimuat
+  * Mentransformassikan data menjadi ruang baru
+  
+ 
