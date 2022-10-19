@@ -32,8 +32,10 @@ Adapun solusi untuk mencapai tujuan diatas yaitu :
   * Melakukan standardisasi data pada fitur numerik dengan _StandarScaler_.
 * Untuk pembuatan model menggunakan algoritma _Random Forest Classifier_ karena Algoritma _random forest_ merupakan salah satu algoritma supervised _learning_. algoritma ini bisa digunakan untuk menyelesaikan masalah klasifikasi dan regresi. _Random forest_ juga merupakan algoritma yang sering digunakan karena cukup sederhana tetapi memiliki stabilitas yang mumpuni. 
 
-  Dalam proyek ini akan menggunakan _Random Forest Classifier_ Non-linier, adapaun cara kerjanya yaitu:
-  * Data dimuat
-  * Mentransformassikan data menjadi ruang baru
+  Dalam proyek ini akan menggunakan _Random Forest Classifier_ , adapaun cara kerjanya yaitu:
+  * Pilih sampel acak dari kumpulan data.
+Buatlah pohon keputusan untuk setiap sampel dan dapatkan hasil prediksi dari setiap pohon keputusan.
+Lakukan pemungutan suara untuk setiap hasil yang diprediksi.
+Pilih hasil prediksi dengan suara terbanyak sebagai prediksi akhir.
   
  
