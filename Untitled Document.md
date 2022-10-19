@@ -28,7 +28,7 @@ Adapun tujuan dari proyek ini yaitu :
 Adapun solusi untuk mencapai tujuan diatas yaitu :
 
 * _Pra-pemrosesan_ dapat dilakukan dengan beberapa teknik, yaitu
-  * Melakukan _Categorilcal Encoding_ sebagai proses untuk mengubah data numerik menjadi data kategori menggunakan One-Hot Encoding
+  * Melakukan _Categorical Encoding_ sebagai proses untuk mengubah data numerik menjadi data kategori menggunakan One-Hot Encoding
   * Melakukan _Split Data_ dengan membagi 2 dataset sebagai data latih (train data) dan data test (test data) dengan perbandingan rasio 80% : 20%.
   * Melakukan standardisasi data pada fitur numerik dengan _StandarScaler_.
 
@@ -67,7 +67,7 @@ Adapun solusi untuk mencapai tujuan diatas yaitu :
 
 ## Data Understanding
 
-Dataset yang digunakan pada proyek ini adalah dataset untuk memprediksi kulalitas _Red Wine_ yang diunduh melalui kaggle : https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009
+Dataset yang digunakan pada proyek ini adalah dataset untuk memprediksi kulalitas _Red Wine_ yang diunduh melalui kaggle : [Red Wine Quality](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009/)
 Pada dataset yang diunduh terdapat 1599 baris dan memiliki 12 kolom. Berdasarkan informasi dari dataset, variabel yang ada didalam dataset _Red Wine Quality_ sebagai berikut :
  
  (berdasarkan _physicochemical tests_):
@@ -92,6 +92,57 @@ Pada dataset yang diunduh terdapat 1599 baris dan memiliki 12 kolom. Berdasarkan
 
 Pada gambar yang tertera diatas dijelaskan bahwa pada data hanya memiliki 1 data kategori bertipe object dan data lainnya merupakan data numerik bertipe float64.
 Berikut Visualisasi data kategori, yaitu:
-  
-   <img width="257" alt="image" src="https://user-images.githubusercontent.com/96508690/196633785-c4740c32-a8d9-477e-9291-b4939751c154.png">
 
+![download](https://user-images.githubusercontent.com/96508690/196654702-3edbfdd2-5d6a-4860-bd89-30f25e81d12d.png)
+
+Selanjutnya untuk visualisasi numeriknya dapat dilihat sebagai berikut :
+
+![download](https://user-images.githubusercontent.com/96508690/196655619-833be0fe-aebc-4ce8-9474-aeba27a7d890.png)
+
+Lalu terdapat visualisasi distribusi data pada kolom dengan numerik features dan antar numeric features, yang dapat dilihat sebagai berikut :
+
+![image](https://user-images.githubusercontent.com/96508690/196657155-5e3ab751-57fd-4298-90b9-3d4b51586997.png)
+
+Dan berikut untuk visualisasi heatmap atau kolerasi numeric features :
+
+![image](https://user-images.githubusercontent.com/96508690/196657513-97406276-27ee-4e8f-93ea-655ea7e05892.png)
+
+ - Jika heatmap mendekati 1 maka semakin tinggi pula kolerasi antar fitur numerik
+ - Jika heatmap mendekati -1 maka kolerasi antar fitur numerik semakin rendah
+ - Jika heatmap mendekati 0 maka kolerasi antar fitur numerik mendekati netral
+ 
+ 
+ ## Data Preparation
+ 
+ Seperti yang sudah diketahui sebelumnya pada bagian Solution statements ada beberapa tahap-tahap dalam melakukan pra-pemrosesan, yaitu sebagai berikut :
+  1. Melakukan _Categorical Encoding_ yang digunakan sebagai proses untuk mengubah data numerik ke data kategori. Untuk teknik Encoding fitur kategori menggunakan One-Hot Encoding. One-Hot Encoding berfungsi untuk data nominal. yang mana data nominal diklasifikasikan tanpa urutan atau peringkat.
+  2. _Split Data_ yang merupakan pembagian dataset menjadi 2, yaitu data latih (_train data_) dan data tes (_test data_). Data latih berguna untuk pelatihan model dan data tes untuk menguji model.
+  3. Standarisasi data pada _numeric features_ yang memiliki tujuan yaitu agar membuat data numerik pada variabel independen memiliki rentang nilai yang sama.
+  
+ 
+ ## Modeling
+ 
+ Setelah melakukan pra-pemrosesan data yang baik, pada tahap modeling akan melakukan 2 hal yaitu tahap pembuatan model baseline dan tahap pembuatan model yang dikembangkan.
+ * Model baseline pada tahap ini akan membuat model dasar dengan menggunakan modul dari scikit-learn yaitu SVC dengan parameter default lalu selanjutnya akan melakukan prediksi pada data tes.
+ * Model yang dikembangkan akan dilakukan setelah melihat kinerja dari model _baseline_, agar model dapat bekerja lebih optimal maka membutuhkan _Hyper Parameter Tuning_.
+ _Hyper Parameter Tuning_ digunakan untuk mencari parameter terbaik yang nanti akan diterpakan pada model _baseline_. Pada analis proyek kali ini akan menggunakan _Grid Search Cross Validation_ dan _Grid Search Cross Validation_ yang mana merupakan metode pemilihan kombinasi model dan hyperparameter dengan cara menguji 1/1 kombinasi dan melakukan validasi untuk setiap kombinasi, tujuannya agar dapat digunakan untuk jadi model saat prediksi.
+ 
+ 
+ ## Evaluasi
+ 
+ Pada proses evaluasi proyek ini menggunakan _confussion matriks_ .
+  * _Confussion matriks_ yaitu pengukur performa untuk masalah klasifikasi machine learning dimana keluaran dapat berupa dua kelas atau lebih.
+
+Berikut perbandingan dari _confussion matriks_ pada analisa kedua model:
+
+ * Model _baseline_
+
+
+    ![image](https://user-images.githubusercontent.com/96508690/196663921-405ca076-8920-415b-b029-3ede1bef1f5b.png)
+
+* Model yang dikembangkan
+
+
+    ![image](https://user-images.githubusercontent.com/96508690/196664084-e1b5b04c-2759-4868-9cea-21d84420e8ed.png)
+
+Dari 2 gambar diatas bisa dilihat bahwa nilai _False Positif_ dan _False Negatif_ yang terlihat di model _baseline_ lebih besar daripada model yang dikembangkan.
