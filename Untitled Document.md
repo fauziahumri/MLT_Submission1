@@ -125,7 +125,7 @@ Selanjutnya untuk visualisasi numeriknya dapat dilihat sebagai berikut :
 Lalu terdapat visualisasi distribusi data pada kolom dengan numerik features dan antar numeric features, yang dapat dilihat sebagai berikut :
 
 ![image](https://user-images.githubusercontent.com/96508690/196657155-5e3ab751-57fd-4298-90b9-3d4b51586997.png)
-<sub>Gambar 4. Visuali hasil distribusi _Numeric_ dan _Categorical features_</sub>
+<sub>Gambar 4. Visualisasi hasil distribusi _Numeric_ dan _Categorical features_</sub>
 
 
 Dan berikut untuk visualisasi heatmap atau kolerasi numeric features :
@@ -162,8 +162,7 @@ Dan berikut untuk visualisasi heatmap atau kolerasi numeric features :
  Pada proses evaluasi proyek ini menggunakan _confussion matriks_ .
   * _Confussion matriks_ yaitu pengukur performa untuk masalah klasifikasi machine learning dimana keluaran dapat berupa dua kelas atau lebih.
 
-Berikut perbandingan dari _confussion matriks_ pada analisa kedua model:
-dengan hyperparameter yang akan di tuning adalah 
+Berikut perbandingan dari _confussion matriks_ pada analisa kedua model dengan hyperparameter yang akan di tuning adalah 
 ```
 parameters = {'C': [0.1, 1, 10, 100, 1000],
               'gamma': [1, 0.1, 0.01, 0.001, 0.0001],
@@ -182,7 +181,7 @@ dengan hasil visualisasi gambar berikut :
 
 
     ![image](https://user-images.githubusercontent.com/96508690/196663921-405ca076-8920-415b-b029-3ede1bef1f5b.png)   
-    <sub>Gambar 6. Confussion matriks pada model baseline</sub>
+    <sub>Gambar 6. Visualisasi Confussion matriks pada model baseline</sub>
 
 
 * Model yang dikembangkan
@@ -217,12 +216,12 @@ Selanjutnya pada bagian evaluasi model yang dikembangkan terdapat tabel paramete
 | support   | 13.000000 | 115.000000 | 141.000000 | 3.0       | 0.669118 | 272.000000 | 272.000000  |
 
  Sehingga secara keseluruhan dapat disimpulkan bahwa:
- - Pada model baseline mendapatkan nilai accuracy yaitu 67.27% begitupun dengan nilai precision, recall dan f1-score. sedangkan pada model parameter terbaik nilai accuracy yang di dapat lebih rendah yaitu 66,9% begitupun dengan nilai pada precision, recall dan f1-score.
+ - Pada model baseline mendapatkan nilai accuracy yaitu 67.27% begitupun dengan nilai precision, recall dan f1-score. sedangkan pada model parameter terbaik nilai accuracy yang di dapat lebih rendah yaitu 66,91% begitupun dengan nilai pada precision, recall dan f1-score.
  - Dari _confusion matriks_ dapat dilihat bahwa model baseline menggunakan Hyper Parameter Tuning memiliki nilai yang lebih baik. 
 
 Sehingga model yang dipilih adalah model baseline menggunakan _Hyperparameter Tuning_.
    
-   - _Accuracy_ merupakan gambaran seberapa akurat model dalam mengklasifikasi
+   - _Accuracy_ merupakan gambaran seberapa akurat model dalam mengklasifikasi.
    - _Precision_ merupakan gambaran _accuracy_ antara dua data yang diminta dengan hasil prediksi yang diberikan oleh model.
    -  _Recall_ merupakan gambaran keberhasilan dari model dalam menemukan kembali suatu informasi.
    -  F1-Score merupakan gambaran perbandingan rata-rata _precision_ dan _recall_ yang dibobotkan. dengan _accuracy_ yang tepat dapat digunakan sebagai acuan performansi algoritma jika dataset memiliki jumlah data _False negatif_ dan _False positif_ yang sangat mendekati, namun jika jumlah tidak mendekati maka gunakan f1-score sebagai acuan [3].
