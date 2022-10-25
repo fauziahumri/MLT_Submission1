@@ -118,6 +118,7 @@ Berikut Visualisasi data kategori, yaitu:
 Selanjutnya untuk visualisasi numeriknya dapat dilihat sebagai berikut :
 
 ![download](https://user-images.githubusercontent.com/96508690/196655619-833be0fe-aebc-4ce8-9474-aeba27a7d890.png)
+
 <sub>Gambar 3. Hasil analisa visualisasi _numerical features_</sub>
 
 
@@ -130,6 +131,7 @@ Lalu terdapat visualisasi distribusi data pada kolom dengan numerik features dan
 Dan berikut untuk visualisasi heatmap atau kolerasi numeric features :
 
 ![image](https://user-images.githubusercontent.com/96508690/196657513-97406276-27ee-4e8f-93ea-655ea7e05892.png)
+
 <sub>Gambar 5. Visualisasi hasil dari _Colleration_</sub>
 
 
@@ -173,7 +175,8 @@ Berikut perbandingan dari _confussion matriks_ pada analisa kedua model:
 
 
     ![image](https://user-images.githubusercontent.com/96508690/196664084-e1b5b04c-2759-4868-9cea-21d84420e8ed.png)
-      <sub>Gambar 7. Visualisasi Confussion matriks untuk best parameters</sub>
+     
+     <sub>Gambar 7. Visualisasi Confussion matriks untuk best parameters</sub>
 
 
 
