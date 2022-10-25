@@ -177,10 +177,32 @@ Berikut perbandingan dari _confussion matriks_ pada analisa kedua model:
     ![image](https://user-images.githubusercontent.com/96508690/196664084-e1b5b04c-2759-4868-9cea-21d84420e8ed.png)
      
      <sub>Gambar 7. Visualisasi Confussion matriks untuk best parameters</sub>
+     
+   Dari 2 gambar diatas bisa dilihat bahwa nilai _False Positif_ dan _False Negatif_ yang terlihat di model _baseline_ lebih besar daripada model yang dikembangkan.
 
+* Classificastion Report
+ Berikut tabel untuk bagian pembuatan model baseline yaitu :
+ 
+ 
+|           | easy | medium     | high       | very high | accuracy | macro avg  | weighed avg |
+|-----------|------|------------|------------|-----------|----------|------------|-------------|
+| precision | 0.0  | 0.624000   | 0.714286   | 0.0       | 0.672794 | 0.334571   | 0.634097    |
+| recall    | 0.0  | 0.678261   | 0.744681   | 0.0       | 0.672794 | 0.355735   | 0.672794    |
+| f1-score  | 0.0  | 0.650000   | 0.729167   | 0.0       | 0.672794 | 0.344792   | 0.652803    |
+| support   | 13.0 | 115.000000 | 141.000000 | 3.0       | 0.672794 | 272.000000 | 272.000000  |
 
+yang mana yang ditampilkan adalah nilai dari akurasi,precision,recall,dan f1-score untuk model.
 
-Dari 2 gambar diatas bisa dilihat bahwa nilai _False Positif_ dan _False Negatif_ yang terlihat di model _baseline_ lebih besar daripada model yang dikembangkan.
+Selanjutnya pada bagian evaluasi model yang dikembangkan terdapat tabel parameter terbaik sebagai berikut :
+|           | easy      | medium     | high       | very high | accuracy | macro avg  | weighed avg |
+|-----------|-----------|------------|------------|-----------|----------|------------|-------------|
+| precision | 0.500000  | 0.636364   | 0.702703   | 0.0       | 0.669118 | 0.459767   | 0.657217    |
+| recall    | 0.076923  | 0.669565   | 0.737589   | 0.0       | 0.669118 | 0.371019   | 0.669118    |
+| f1-score  | 0.133333  | 0.652542   | 0.719723   | 0.0       | 0.669118 | 0.376400   | 0.655355    |
+| support   | 13.000000 | 115.000000 | 141.000000 | 3.0       | 0.669118 | 272.000000 | 272.000000  |
+
+ Sehingga secara keseluruhan dapat disimpulkan bahwa pada model baseline mendapatkan nilai accuracy yaitu 67.27% begitupun dengan nilai precision, recall dan f1-score. sedangkan pada model parameter terbaik nilai accuracy yang di dapat lebih rendah yaitu 66,9% begitupun dengan nilai pada precision, recall dan f1-score.
+   
 
 ## References
 [1]Andono, P. N., & Rachmawanto, E. H. (2020). Evaluasi Ekstraksi Fitur GLCM dan LBO Menggunakan Multikernel SVM untuk Klasifikasi Batik. JURNAL RESTI, 1-9
