@@ -163,7 +163,21 @@ Dan berikut untuk visualisasi heatmap atau kolerasi numeric features :
   * _Confussion matriks_ yaitu pengukur performa untuk masalah klasifikasi machine learning dimana keluaran dapat berupa dua kelas atau lebih.
 
 Berikut perbandingan dari _confussion matriks_ pada analisa kedua model:
-
+dengan hyperparameter yang akan di tuning adalah 
+```
+parameters = {'C': [0.1, 1, 10, 100, 1000],
+              'gamma': [1, 0.1, 0.01, 0.001, 0.0001],
+              'kernel': ['rbf'] }
+```
+setelah menetapkan StratifiedKFold, melakukan pembuatan model untuk GridSearchCV, dan melakukan training maka hasilnya :
+``` print("Best parameter: ", grid.best_estimator_)
+print("Score: ", grid.best_score_)
+```
+```
+Best parameter:  SVC(C=100, gamma=0.01)
+Score:  0.7102540970262643
+```
+dengan hasil visualisasi gambar berikut :
  * Model _baseline_
 
 
@@ -180,8 +194,9 @@ Berikut perbandingan dari _confussion matriks_ pada analisa kedua model:
      
    Dari 2 gambar diatas bisa dilihat bahwa nilai _False Positif_ dan _False Negatif_ yang terlihat di model _baseline_ lebih besar daripada model yang dikembangkan.
 
-* Classificastion Report
- Berikut tabel untuk bagian pembuatan model baseline yaitu :
+* _Classificastion Report_
+ 
+Berikut tabel untuk bagian pembuatan model baseline yaitu :
  
  
 |           | easy | medium     | high       | very high | accuracy | macro avg  | weighed avg |
@@ -201,10 +216,20 @@ Selanjutnya pada bagian evaluasi model yang dikembangkan terdapat tabel paramete
 | f1-score  | 0.133333  | 0.652542   | 0.719723   | 0.0       | 0.669118 | 0.376400   | 0.655355    |
 | support   | 13.000000 | 115.000000 | 141.000000 | 3.0       | 0.669118 | 272.000000 | 272.000000  |
 
- Sehingga secara keseluruhan dapat disimpulkan bahwa pada model baseline mendapatkan nilai accuracy yaitu 67.27% begitupun dengan nilai precision, recall dan f1-score. sedangkan pada model parameter terbaik nilai accuracy yang di dapat lebih rendah yaitu 66,9% begitupun dengan nilai pada precision, recall dan f1-score.
+ Sehingga secara keseluruhan dapat disimpulkan bahwa:
+ - Pada model baseline mendapatkan nilai accuracy yaitu 67.27% begitupun dengan nilai precision, recall dan f1-score. sedangkan pada model parameter terbaik nilai accuracy yang di dapat lebih rendah yaitu 66,9% begitupun dengan nilai pada precision, recall dan f1-score.
+ - Dari _confusion matriks_ dapat dilihat bahwa model baseline menggunakan Hyper Parameter Tuning memiliki nilai yang lebih baik. 
+
+Sehingga model yang dipilih adalah model baseline menggunakan _Hyperparameter Tuning_.
    
+   - _Accuracy_ merupakan gambaran seberapa akurat model dalam mengklasifikasi
+   - _Precision_ merupakan gambaran _accuracy_ antara dua data yang diminta dengan hasil prediksi yang diberikan oleh model.
+   -  _Recall_ merupakan gambaran keberhasilan dari model dalam menemukan kembali suatu informasi.
+   -  F1-Score merupakan gambaran perbandingan rata-rata _precision_ dan _recall_ yang dibobotkan. dengan _accuracy_ yang tepat dapat digunakan sebagai acuan performansi algoritma jika dataset memiliki jumlah data _False negatif_ dan _False positif_ yang sangat mendekati, namun jika jumlah tidak mendekati maka gunakan f1-score sebagai acuan [3].
 
 ## References
 [1]Andono, P. N., & Rachmawanto, E. H. (2020). Evaluasi Ekstraksi Fitur GLCM dan LBO Menggunakan Multikernel SVM untuk Klasifikasi Batik. JURNAL RESTI, 1-9
 
 [2]Supryadi, R., Gata, W., Maulidah, N., & Fauzi, A. (2020). Penerapan Algoritma Random Forest Untuk Menentukan Kualitas Anggur Merah. JURNAL ILMIAH EKONOMI DAN BISNIS, 1-9.
+
+[3] https://socs.binus.ac.id/2020/11/01/confusion-matrix/
